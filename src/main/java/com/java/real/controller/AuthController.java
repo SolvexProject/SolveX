@@ -1,9 +1,11 @@
 package com.java.real.controller;
 
+import java.security.PrivateKey;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -34,6 +36,8 @@ public class AuthController {
 	
 	@Autowired
 	EmailService emailService;
+	
+    private static final Logger log = Logger.getLogger(AuthController.class);
 
 	@PostMapping("/signup")
 	public String signup(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
@@ -47,6 +51,7 @@ public class AuthController {
 		                                           .map(e -> e.getDefaultMessage())
 		                                           .toList();
 		        model.addAttribute("errorMessages", errorMessages);
+		        log.info("this is for Testing");
 	            return "signup";
 	        }
 		
