@@ -6,7 +6,47 @@
 </head>
 <body>
 
-This is the Basic Page Okay ...
+This is the Basic Page Okay ... 
+<p>
+db.problems.insertMany([
+  {
+    id: "p001",
+    title: "Array Sum",
+    description: "Find the sum of all elements in an array.",
+    difficulty: "easy",
+    popularity: 85,
+    tags: ["arrays", "math", "beginner"],
+    examples: [
+      { input: "[1,2,3,4]", output: "10" },
+      { input: "[5,10,15]", output: "30" }
+    ]
+  },
+  {
+    id: "p002",
+    title: "String Reverse",
+    description: "Reverse a given string.",
+    difficulty: "easy",
+    popularity: 90,
+    tags: ["strings", "basic"],
+    examples: [
+      { input: "hello", output: "olleh" },
+      { input: "world", output: "dlrow" }
+    ]
+  },
+  {
+    id: "p003",
+    title: "Binary Search",
+    description: "Implement binary search on a sorted array.",
+    difficulty: "medium",
+    popularity: 70,
+    tags: ["arrays", "search", "algorithm"],
+    examples: [
+      { input: "[1,3,5,7,9], target=5", output: "index 2" },
+      { input: "[2,4,6,8,10], target=7", output: "-1" }
+    ]
+  },
+
+</p>
 
 </body>
 </html>
