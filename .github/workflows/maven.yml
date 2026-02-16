@@ -25,6 +25,7 @@ jobs:
       SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
       MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
       MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}  
+      APP_VERIFICATION_BASE_URL: ${{ secrets.VERIFICATION_BASE_URL }}
     steps:
       - uses: actions/checkout@v4
 
@@ -85,5 +86,6 @@ jobs:
           -e MAIL_USERNAME="${{ secrets.MAIL_USERNAME }}" \
           -e MAIL_PASSWORD="${{ secrets.MAIL_PASSWORD }}" \
           -e MONGO_URI="${{ secrets.MONGO_URI }}" \
+          -e APP_VERIFICATION_BASE_URL="${{ secrets.VERIFICATION_BASE_URL }}" \
           -e JAVA_OPTS="-Xms128m -Xmx256m" \
           sunilya96/solvex:latest
