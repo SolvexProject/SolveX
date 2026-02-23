@@ -52,7 +52,7 @@ public class PasswordController {
 	}
 
 
-	@PostMapping("/verify-otp")
+	@PostMapping("/verify-otp") 
 	public String verifyOtp(String email, String otp) {
 		System.out.println("Calling the verfy OTP methods :=");
 	    PasswordResetOtp resetOtp =
