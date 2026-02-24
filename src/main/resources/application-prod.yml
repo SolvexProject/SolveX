@@ -1,18 +1,18 @@
-spring:
-  data:
-    mongodb:
-      uri: ${SPRING_DATA_MONGODB_URI}
-
-# spring:
-#   #data:
-#     mongodb:
-#       host: mymongo         # MongoDB container name
-#       port: 27017
-#       database: test     # Change to your DB name
-#       username: admin        # From MONGO_INITDB_ROOT_USERNAME
-#       password: Admin@123     # From MONGO_INITDB_ROOT_PASSWORD
-#       authentication-database: admin
 # spring:
 #   data:
 #     mongodb:
-#       uri: ${MONGO_DBURI}
+#       uri: ${SPRING_DATA_MONGODB_URI}
+
+# # spring:
+# #   #data:
+# #     mongodb:
+# #       host: mymongo         # MongoDB container name
+# #       port: 27017
+# #       database: test     # Change to your DB name
+# #       username: admin        # From MONGO_INITDB_ROOT_USERNAME
+# #       password: Admin@123     # From MONGO_INITDB_ROOT_PASSWORD
+# #       authentication-database: admin
+# # spring:
+# #   data:
+# #     mongodb:
+# #       uri: ${MONGO_DBURI}
