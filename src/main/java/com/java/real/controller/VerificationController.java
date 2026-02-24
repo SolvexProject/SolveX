@@ -23,7 +23,7 @@ public class VerificationController {
 
 //    private final controller.AuthController authController;
 
-    @Autowired
+    @Autowired 
     private VerificationTokenRepository tokenRepository;
 
     @Autowired
