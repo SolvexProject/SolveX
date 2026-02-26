@@ -34,7 +34,7 @@ public class ProblemService {
         return problemRepository.findAll();
     }
     
-//    for Paginations okay 
+//    for Paginations okay.
 	/*
 	 * public Page<Problem> getProblems(Pageable pageable) { Query query = new
 	 * Query().with(pageable);
