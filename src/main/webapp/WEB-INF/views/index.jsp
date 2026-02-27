@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar- -->
   <nav>
 <div class="hero-image">
   <img src="images/website_logo.jpg" alt="SolveX Logo" style="width:150px; height:auto;"/>
