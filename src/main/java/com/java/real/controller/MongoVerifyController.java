@@ -15,17 +15,28 @@ public class MongoVerifyController {
     @Autowired
     MongoTemplate mongoTemplate;
 
+   @RestController
+public class DbController {
+
+    private final MongoTemplate mongoTemplate;
+    private final MongoClient mongoClient; // Spring-managed
+
+    public DbController(MongoTemplate mongoTemplate, MongoClient mongoClient) {
+        this.mongoTemplate = mongoTemplate;
+        this.mongoClient = mongoClient;
+    }
+
     @GetMapping("/mongo-db")
     public String db() {
-    	System.out.println("Calling tge Db for MongoDB :"+mongoTemplate.getDb().getName());
-    	try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017")) {
-            MongoDatabase database = mongoClient.getDatabase("codeBloomDatabaseDEVToPRDMongoDB");
+        String dbName = mongoTemplate.getDb().getName();
+        MongoDatabase db = mongoClient.getDatabase(dbName);
 
-            // Print all collection names
-            for (String name : database.listCollectionNames()) {
-                System.out.println("Collection: " + name);
-            }
+        StringBuilder sb = new StringBuilder("DB: ").append(dbName).append("\nCollections:\n");
+        for (String name : db.listCollectionNames()) {
+            System.out.println("Collection: " + name);
+            sb.append("- ").append(name).append("\n");
         }
-        return mongoTemplate.getDb().getName();
+        return sb.toString();
     }
+}
 }
