@@ -12,31 +12,23 @@ import com.mongodb.client.MongoDatabase;
 @RestController
 public class MongoVerifyController {
 
-    @Autowired
-    MongoTemplate mongoTemplate;
-
-   @RestController
-public class DbController {
-
     private final MongoTemplate mongoTemplate;
-    private final MongoClient mongoClient; // Spring-managed
 
-    public DbController(MongoTemplate mongoTemplate, MongoClient mongoClient) {
+    public MongoVerifyController(MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
-        this.mongoClient = mongoClient;
     }
 
     @GetMapping("/mongo-db")
     public String db() {
         String dbName = mongoTemplate.getDb().getName();
-        MongoDatabase db = mongoClient.getDatabase(dbName);
+        System.out.println("Connected DB (via MongoTemplate): " + dbName);
 
         StringBuilder sb = new StringBuilder("DB: ").append(dbName).append("\nCollections:\n");
-        for (String name : db.listCollectionNames()) {
+        for (String name : mongoTemplate.getDb().listCollectionNames()) {
             System.out.println("Collection: " + name);
             sb.append("- ").append(name).append("\n");
         }
         return sb.toString();
     }
 }
-}
+
