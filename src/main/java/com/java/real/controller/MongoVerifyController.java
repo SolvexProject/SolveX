@@ -12,23 +12,25 @@ import com.mongodb.client.MongoDatabase;
 @RestController
 public class MongoVerifyController {
 
-    private final MongoTemplate mongoTemplate;
+    @Autowired
+    MongoTemplate mongoTemplate;
 
-    public MongoVerifyController(MongoTemplate mongoTemplate) {
-        this.mongoTemplate = mongoTemplate;
-    }
+    
+    @Value("${spring.data.mongodb.uri}")  
+    private String mongoUri;
+
 
     @GetMapping("/mongo-db")
     public String db() {
-        String dbName = mongoTemplate.getDb().getName();
-        System.out.println("Connected DB (via MongoTemplate): " + dbName);
+    	System.out.println("Calling tge Db for MongoDB :"+mongoTemplate.getDb().getName());
+    	try (MongoClient mongoClient = MongoClients.create(mongoUri)) {
+            MongoDatabase database = mongoClient.getDatabase("test");
 
-        StringBuilder sb = new StringBuilder("DB: ").append(dbName).append("\nCollections:\n");
-        for (String name : mongoTemplate.getDb().listCollectionNames()) {
-            System.out.println("Collection: " + name);
-            sb.append("- ").append(name).append("\n");
+            // Print all collection names
+            for (String name : database.listCollectionNames()) {
+                System.out.println("Collection: " + name);
+            }
         }
-        return sb.toString();
+        return mongoTemplate.getDb().getName();
     }
 }
-
