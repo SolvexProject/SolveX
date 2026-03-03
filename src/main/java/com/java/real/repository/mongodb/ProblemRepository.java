@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.java.real.entity.Problem;
 
-
 @Repository
 public interface ProblemRepository extends MongoRepository<Problem, String> {
     List<Problem> findByDifficulty(String difficulty);
