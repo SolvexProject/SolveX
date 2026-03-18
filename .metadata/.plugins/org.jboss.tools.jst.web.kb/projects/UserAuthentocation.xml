@@ -291,14 +291,8 @@
   <path value="C:/Users/sunilg/.m2/repository/org/springframework/boot/spring-boot/4.0.1/spring-boot-4.0.1.jar"/>
   <path value="C:/Users/sunilg/.m2/repository/org/springframework/spring-webmvc/7.0.2/spring-webmvc-7.0.2.jar">
    <libraries>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-spring-webmvc-7.0.2.jar/meta-inf/spring-form.tld" project="TestingSpringWithJSP"/>
-    </library>
-    <library class="tld">
-     <id class="model-object"
-      path="FileSystems/lib-spring-webmvc-7.0.2.jar/meta-inf/spring.tld" project="TestingSpringWithJSP"/>
-    </library>
+    <library class="tld"/>
+    <library class="tld"/>
    </libraries>
   </path>
   <path value="C:/Users/sunilg/.m2/repository/org/springframework/boot/spring-boot-validation/4.0.1/spring-boot-validation-4.0.1.jar"/>
