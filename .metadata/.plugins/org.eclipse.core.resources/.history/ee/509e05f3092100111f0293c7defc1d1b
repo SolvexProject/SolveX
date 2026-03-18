@@ -1,0 +1,50 @@
+
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.devtools.restart.enabled=false
+
+# JSP
+spring.jpa.generate-ddl=true
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+# ======================
+# MongoDB
+# ======================
+spring.data.mongodb.uri=${MONGODB_URI}
+# spring.data.mongodb.uri=mongodb://localhost:27017/test
+
+# ================= EMAIL =================
+#spring.mail.host=${MAIL_HOST}
+#spring.mail.port=${MAIL_PORT}
+#spring.mail.username=${MAIL_USERNAME}
+#spring.mail.password=${MAIL_PASSWORD}
+#spring.mail.properties.mail.smtp.auth=${MAIL_SMTP_AUTH}
+#spring.mail.properties.mail.smtp.starttls.enable=${MAIL_SMTP_STARTTLS}
+
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=${MAIL_USERNAME}
+spring.mail.password=${MAIL_PASSWORD}
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+#for email verifications parts :
+#app.verification.base-url=${VERIFICATION_BASE_URL}
+app.verification.base-url=${APP_VERIFICATION_BASE_URL:http://localhost:8080}
+
+# All Email Configurations 
+#spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
+#spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
+#spring.security.oauth2.client.registration.google.scope=email,profile
+
+#spring.security.oauth2.client.registration.google.client-id=${GOOGLE_CLIENT_ID}
+#spring.security.oauth2.client.registration.google.client-secret=${GOOGLE_CLIENT_SECRET}
+#spring.security.oauth2.client.registration.google.scope=openid,profile,email
