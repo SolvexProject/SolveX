@@ -1,6 +1,0 @@
-spring.application.name=SolveX
-
-#server.ssl.enabled=false 
-server.port=8081
-
-spring.profiles.active=${ENV:prod}
